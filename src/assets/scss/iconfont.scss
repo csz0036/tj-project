@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'iconfont';
+  src:  url('../fonts/iconfont.eot?qz9yb7');
+  src:  url('../fonts/iconfont.eot?qz9yb7#iefix') format('embedded-opentype'),
+    url('../fonts/iconfont.ttf?qz9yb7') format('truetype'),
+    url('../fonts/iconfont.woff?qz9yb7') format('woff'),
+    url('../fonts/iconfont.svg?qz9yb7#iconfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'iconfont' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.icon-shanchu:before { content: "\e600"; }
+.icon-star:before { content: "\e61a"; }
+.icon-add_circle:before { content: "\e63c"; }
+.icon-bianji:before { content: "\e63a"; }
+.icon-fenxiang:before { content: "\e6f4"; }
+

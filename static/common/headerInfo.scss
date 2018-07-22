@@ -1,0 +1,96 @@
+.partnerList{
+  position: relative;
+  z-index: 999;
+  background-color: #fff;
+  margin-bottom: pxr(24);
+  padding-bottom:  pxr(30);
+  .partnerInfo{
+    height: pxr(216);
+    padding: pxr(40) pxr(30) 0;
+    @extend .dis-flex;
+    
+    .partnerPic{
+      width: pxr(135);
+      height: pxr(135);
+      background-color: #ccc;
+      border-radius: 50%;
+      img{ 
+        width: pxr(135);
+        height: pxr(135);
+        border-radius: 50%
+      }
+    }
+    .partnerText{
+      @extend .flex-1;
+      padding-left: pxr(20);
+      .pt-title{
+        font-size: pxr(34);
+        color: #343A3D;
+        margin-bottom: pxr(5);
+        .icon_edit{
+          background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA0CAMAAAAZkVDaAAAAP1BMVEX////Ky8z9/f3Mzc77+/vr6+z5+fn39/fu7u7w8PHp6erb29zV1dbZ2drd3d7X19jP0NHS0tPz8/Pm5ufi4uPLdUEuAAABKUlEQVRIx9XVSY6FMAxFUT87EHpCs/+1Vr6giEKThsFX1R1GOrIUD0ypqUHQlpSbFtimTMilATbIOUxPwAvIlh1Qc6pSvMBlEiHPU02LZELLBJIDHbPV1HgwymoBrnBMZLbKgzEG4A5O0Wk+NNhagqyyzIfF9tJxkDnhoPmwMovZCgvzmINjkBXAA+Q3DC29Y+rfs+aJDWEmX2RqeFDS8BcZwqx9YsXfYbS8Y6y7N0y3FuYzanAPqzCjEQ5mMCUAegvzGFXABke4JMpowA5LB6WOMja4wjijGThDSWC0woOpjDqcoMwprAR8OCQxauDVKZXEqPXZqikplsOYoSgVc5qrd9Qvs7Kx+rRbVnfxaQuCo9V92bV+24Jbw8XpWzfuh0Su/Tq5y877Afl3DdnoO2QhAAAAAElFTkSuQmCC) no-repeat;
+          width: pxr(26);
+          height: pxr(26);
+          background-size: pxr(26);
+          display: inline-block;
+          margin-left: pxr(10);
+        }
+      }
+      .pt-subTitle{
+        font-size: pxr(26);
+        color: #606060;
+        margin-bottom: pxr(12);
+      }
+      .pt-x{
+        span{
+          display: inline-block;
+          &.pt-papers{
+            font-size: pxr(20);
+            color: #FF3333;
+            border:pxr(1) solid #FF3333;
+            border-radius: pxr(20);
+            padding: pxr(4) pxr(10);
+            line-height: 1;
+          }
+        }
+      }
+    }
+  }
+  .partnerBtn{
+    background: #FE534A;
+    border-radius: 4px;
+    font-size: pxr(32);
+    color: #fff;
+    text-align: center;
+    display: block;
+    border: none;
+    width: pxr(690);
+    height: pxr(80);
+    line-height: pxr(80);
+    margin: pxr(20) auto 0;
+  } 
+  .btn-wrap{
+    @extend .dis-flex;
+    padding: pxr(20) pxr(30) pxr(0);
+    .m-btn{
+      @extend .flex-1;
+      background: #F5F8FA;
+      border-radius: 4px;
+      font-size: pxr(32);
+      color: #959698;
+      text-align: center;
+      width: pxr(330);
+      height: pxr(80);
+      line-height: pxr(80);
+      border:none;
+      &.zx-btn{
+        background: #FE534A;
+        color: #fff;
+      }
+      &.ml30{
+        margin-left: pxr(30);
+      }
+    }
+  }
+
+}

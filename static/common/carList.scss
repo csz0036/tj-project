@@ -1,0 +1,289 @@
+ //最新好车
+.car-list {
+  @extend .bor_t_b_img;
+  border-width: 1px 0;
+  background-color: #fff;
+  
+  li {
+    padding: pxr(20) 0 pxr(20) pxr(20);
+    position: relative;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 10px 0 rgba(248,248,248,0.60);
+    &:last-child{
+      box-shadow: none;
+    }
+    // &:last-child{
+    //   &:after{
+    //     border-width:0;
+    //   }
+    // }
+    .goods-tit{
+      color: #343A3D;
+      font-size: pxr(28);
+      padding: pxr(20);
+    }
+    .btn-wrap{
+      text-align: right;
+      padding: pxr(40) pxr(30) 0;
+      .m-btn{
+        outline: none;
+        border: 1px solid #ccc;
+        color: #343A3D;
+        font-size: pxr(24);
+        line-height: 1.42;
+        display: inline-block;
+        padding: pxr(7) pxr(24);
+        cursor: pointer;
+        border-radius: pxr(8);
+        margin-left: pxr(20);
+        &.dis{
+          display: none;
+        }
+        &.m-edit{
+          border-color: #02BA6F;
+          color: #02BA6F;
+          display: none;
+        }
+        &.m-share{
+          border-color: #7BBADD;
+          color: #7BBADD;
+          display: none;
+        }
+        
+      }
+    }
+    .goods-bd{
+      @extend .dis-flex;
+      width: 100%;
+      position: relative;
+      &:after{
+        position: absolute;
+        content: '';
+        bottom: pxr(-20);
+        left: pxr(20);
+        right: 0;
+        @extend .bor_t_b_img;
+        border-width: 0 0 1px 0;
+        opacity: .8;
+      }
+    }
+    .list-lt {
+      width: pxr(250);
+      margin-right: pxr(20);
+      height: pxr(188);
+      overflow: hidden;
+      position: relative;
+      img {
+        width: 100% ; position: absolute; top: 50%;transform:translate3d(0,-50%,0);
+        z-index: 0;
+      }
+      .video-icon{
+        transform:translate3d(-50%,-50%,0);
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: pxr(60);
+        height: pxr(60);
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA3CAMAAACfBSJ0AAABnlBMVEUAAAAAAAAhISENDQ0bGxvKysoGBgaNjY3W1tZEREQ5OTkJCQmEhIT9/f3JycnHx8fFxcW9vb2xsbFWVlZLS0v7+/u/v7+zs7O6urqvr69qampkZGSZmZmVlZWPj4+Ojo6Ghobo6OikpKSmpqaNjY1oaGhPT08WFhYSEhLDw8PCwsLx8fHBwcHr6+u7u7u2tra8vLy4uLjV1dXQ0NChoaGysrKbm5u+vr6WlpaioqKpqammpqaJiYlgYGBEREQtLS0nJyeampqSkpKRkZGOjo6KioqFhYWDg4N/f3+Dg4P4+Pj19fW2tra4uLivr6+srKyUlJR1dXWRkZFzc3N8fHx3d3dzc3Nubm5cXFyfn588PDybm5ubm5uKioru7u7h4eHb29vZ2dmsrKyrq6uqqqqnp6fNzc3Dw8OOjo6tra2Li4uGhoZ/f3+ZmZl6enpvb2+mpqZTU1Oenp4wMDCcnJyXl5eVlZWTk5OSkpKHh4eIiIiFhYWBgYF6enrj4+Pf39/Y2NjX19fS0tLHx8fGxsZQUFCenp7////MzMzLy8s4GJ3uAAAAh3RSTlOZAKGdof6bxeawq5wa/vz7+fLauK788uzr6cG/loVnYzHx4s/Et7Wfnvj39vXy8e/t6Obj4N3c2tnOycXDvaumpJt3cVxSJyAQB/v55dfV0cjHxsa+vbu5s62pn55K9O3p6Ofn5eTh3dTT09DMysnEvrCpqaGOhoF7QTwXEwru6+fn5N7er6tMJsr0AAADMklEQVRIx5XWZXvaUBTA8ROSdAPSBJcWp6Vuq7shpe7ubqu7zDcO33opsEFIAun//e+5ubm5Tw4QUnkGbjrHm0ebxztvBjyEVBLOfWFBpPXWPd+eVU8jWi7c+d2LQ4+6phmNFpJpNTNNOtQ7XnK61/4K3O0mQRjZvYsV/a/yLmhDnxqkUvvQFpRx0at4rRHkMtbGr6JSjmnGNhLkI9uwmRG7cANbDLkrZhvC2S5Sr1NDvtS6+ojQPTdwPMsPuYZngZtgjaAkIzuR6Rw4BcqaQkfaPbFNoLQm9um/M+goxY7SGf65QTwH5Z3jYMqN1hW8wxXUjSadC7MOXNu70N4+pyHljh9dCXdUXZDt5v3+2eVyuQWrj95chD4BYWWlY15v48Rcj4w8oSO8u0cNCFN1fYrFRr78+ly6TEntXIP3vOushGw3+S3GV+g96DKVS8HKTt7pW0Tuw8fYW8M1W2NdJpXYtegJYHBK5Er450ysaK5pbJ/vobQgbAYZCGFAer0UrdqfNGV/TQEMwQP25nIxc9XX1hITJTjMXnyAWyyTdmm53tj+WyM4KLyFVQQ5l37Ymul5yAxXFTmzt2RB8MXgCjiQzOMKRzZaS03C53TAHapyu8LhTf+i8L304R24UJ3zHEa2xmdNKuEJqtEFHiySd+aqjYPJxb7snRShBwjuWO574dkP/2IfiDrmCCAMVpGb/p58+43+uR4VKXZWA+9W4pTUesPrm2Ndl31S14GKr/BuTbRBanbfXOj9OX1ZllKi7a3xjrDtgDCy50Nra/rSitqxEW+uP/vCF1CmhVKTnAJNvD/hGF0LvKcWHZNwxJ+4Rrnil1siko6ptL/D2SuZlCOcWKSYFaEz/R8zcNcK2TVnINIuXF1XroiV11WHMxwRZO2kAkba2aBwLhigfWR+5qMHsucQJ71N5WHUNu0Uzz2DnF6dk6n17KDUnBWy0KdaWaU9pS0h6bmO6cBao+x4hh2M7Bzprkdrt1a8VrcV69255tao04YVhwEyA5GBwwq0OaP55mRXB4e0ve2s2BgwFp+12WnkOlxK5mtiyL1ksGAyi2HJPSQ7l0thz+Pao4cn0v0FUdDO5LzRSW0AAAAASUVORK5CYII=) no-repeat;
+        background-size:100% 100%;
+        z-index: 1;
+      }
+      .down-icon{transform:translate3d(0,0,0);
+        display: block;
+        position: absolute;
+        z-index: 1;
+        text-align: center;
+        color: #fff;
+        font-size: 0;
+        line-height: 1;
+        top: 0;
+        left: 0;
+        min-width: pxr(66);
+        padding: 0 pxr(20) 0 pxr(15);
+        height: pxr(32);
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALEAAAAwCAMAAABpG2uKAAAAclBMVEUAAAD/Slr/Slr/SVr/Slr/Slr/SVn/SVn/SVn/SVn/Slr/Slr/SVn/bXr/VmX/cHz/WWf/cn7/T17/ZHH/VGL/UWD/ZnP/Xmz/d4L/a3f/aHX/W2n/S1r/TVz/YG7/eYT/YnD/SFj/dYH/dID/XWv/eoa6H4UvAAAADXRSTlMA9LymO9plHA3pmnMtL5kv7QAAAWpJREFUaN7VmGlywjAMRj/b2YBuLCk0JVCX9P5XbFI7DGHqJh7XE+md4P3Rk0b46jj/cDB8tlxa1pbnnscrb5bK8GrZGj46Toa9pWmad8tLz9OVnaG0bCy15WjRHUHGlaUXjmR8nMO4+dN45218pmW8cRjre+PD0HgdwXgoHN/YZ/Cs8T7EuPYwDkhFgHE5q/EpnjG3HGtwy7EGtxxTNHbGzQBuOdaIleNw49phTCfHU4255ViDW441uOVYg1zcRowFPeORuKXglmMJbjleYixuxO55vQKZBTIxbgmY5VgAzHIsgdnj5mecETD2ipsoAF45VgD+OcfbuDlOALDKsUQLqxwnaOGUY4UORjkWuTHmk+MMJIynx03BwCbHaQEDlxwvcriMLyS/3YsH9PDI8Y0wWOQ4zRFsXEU2HgirAjfQz7HIAELG43FTOYbMkGMfY5ngHso5Fsr4DiGbYyGzAr9BL8elSOVylcDBNyfT6kH0L2lbAAAAAElFTkSuQmCC) no-repeat;
+        font-size: pxr(20);
+        line-height: pxr(32);
+        background-size:100% 100%;
+        &.off{
+          background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALEAAAAwCAMAAABpG2uKAAAAY1BMVEUAAACxoqTBkZW8lpnKho3PgYfRfYS1nqDTfIOqqqrMzMyrq6uurq7JycnGxsa2tra4uLitra20tLSxsbHBwcHExMS/v7/Ozs68vLzLy8vIyMiwsLDDw8Ozs7O6urq+vr67u7tP7H/9AAAACXRSTlMA/d7tp2g++hnedB95AAAC60lEQVRo3s2Za3KjQAyEeXmdYMePDYRnHO5/ytXM1lTbNCL+kRHpE3zV1ZKaIWmasimdOtGbqO/7k6gWjeNYVdWH6Ourbad2ut0uorPor+jz8100DEen6/V68HqNLCFuArHggtghC7DIAQuxIHtiAAfiwQE7ZDPicubxKRB7YHgsxBd4DOKjl73HDphS4YFF8FhEHiMUWxD3Ig8ccvyBVNxEc489sBA75G1TEYAFGcTw2AkWG5nMxLPJG0U8eezxsA1xh2WBHK8Qi5AKJ0NimMzElRNtN84xgvxq4jGI9QsCYt5uVqPHxN08x5i8VqTdvMH45pWCrK03EHtkbfJ+h8fIMVLBOcYFMSVuFOKRiOmCWC9kEOOC9NyEmFiAAzJCYUWMVBAx7wofi/PjPv4Nu+J0Hwu+0uftJ6+hXrFM3C40Ic8cgK9GxCUVi+VdMa32CqtGnyYIxWMVqpUc6xckEEdlPuy5bcLjUbnSl3XiuMp5H7/h5PHkPXr8vsGVzpiY9nH1fRMyRC6I+NnuJtqku+20HNeuu9VMzF+mtkc6TRYvCKUCOYbJjtj+5uUJedxTKirqFUsmG/WK4j9xA4tX2+b2/Th9EWLEAt953IRaJ/YYqbBZyFmylGPlgtB7xRbbbeeJSyBz21T2MfoxiGN+S2PukIpnXlhuE3J8f/QAHM1kWJx4Xn6O9RbXs+2Gx026IHE/QpBiyjGtN0oFA5sVi/RPMkvF0uTBY/oIoe4WG7lI4LHS6GveFbyPQ46F2SAT6nZjYu7HuNImxWL/AmK9bTIxX2mDm4cQE3GnXun2YfJE9MISkxjAPHlAJo+Vo2cweQCmHHerxJP2eyx6r9jfASsv3s/m2CYVmQwdeYzu1vPXP27eFpOXyh4mYgqFcvMweisX5KcNRiJ48lDekAr+D8KVPuI+zndAJY+pCT25K+JNXpox7/eThyCH7sa7IsrgpXmBgSNipbvx5LHH0iuOw49O3iHd51mxSxT9A6tmwFcjZSm1AAAAAElFTkSuQmCC) no-repeat;
+          background-size:100% 100%;
+        }
+      }
+    }
+    .pd-info {
+      min-height: pxr(188);
+      @extend .flex-1;
+      text-align: left;
+      position: relative;
+      .price {
+        font-size: pxr(36);
+        color: #ff4757;
+        position: relative;
+        i{
+          font-size: pxr(24);
+        }
+        span{
+          color: #6a6a77; font-size: pxr(24);
+          padding-left: pxr(10);
+        }
+        
+      }
+      h3,h2 {
+        //height: 45);
+        padding-top: pxr(10);
+        padding-bottom: pxr(4);
+        color: #4A4A53;
+        font-size: pxr(28);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-weight: normal;
+        width: pxr(360);
+      }
+      .pd-time {
+        //height: pxr(40);
+        color: #9EA4AF;
+        font-size: pxr(24);
+      }
+      .adr_t {
+        color: #999;
+        text-overflow: ellipsis;
+        font-size: pxr(24);
+        white-space: nowrap;
+        overflow: hidden;
+        bottom: pxr(15);
+        right: pxr(15);
+      }
+    }
+    .pd-info {
+      padding-right: pxr(20);
+      h3 {
+        width: auto;
+        padding-top: pxr(10);
+      }
+      .index-icon{
+        transform: translate3d(0,0,0);
+        margin-top: pxr(8);
+        @extend .dis-flex;
+        i{
+          font-size: pxr(24);
+          margin-right: pxr(10);
+          color: #028ce6;
+          border: 1px solid #a8d7f6;
+          border-radius: 2px;
+          line-height: 1;
+          padding: pxr(3) pxr(10);
+
+        }
+      }
+      .taimAddrWrap {
+        display: -webkit-box;
+        margin-top: pxr(6);
+        font-size: 0;
+        height: pxr(35);
+        line-height: pxr(35);
+        i{
+          color: #DCE2EE; font-size: pxr(20);
+          /*width: 1px;
+          height: pxr(15);
+          overflow: hidden;
+          text-indent: -9px;*/
+          margin: 0 pxr(10);
+          position: relative;
+          top:-1.3px;
+          /*display: inline-block;
+          background: #ccc;
+          */
+        }
+      }
+      .pd-time {
+        display: block;
+      }
+      .CertificationIcon,
+      .adr_t{
+        font-size: pxr(24);
+        color: #9EA4AF;
+        width: pxr(150);
+        display: block;
+      }
+      /*.adr_t{margin-left: 0.2rem}*/
+
+      .CertificationIcon {
+        @extend .dis-flex;
+        position: absolute;
+        text-align: right;
+        right: pxr(15);
+        top: 0;
+        img {
+          width: pxr(105);
+          height: pxr(28);
+          float: none;
+        }
+        &.oddCertifi {
+          top: pxr(15);
+        }
+      }
+      .span-icon{
+        display: inline-block;
+        height: 100%;
+        img{
+          vertical-align: top;
+        }
+      }
+      .ykj-icon{
+        @extend .span-icon;
+        background-position: 0 -pxr(42);
+        overflow: hidden;
+        width: pxr(62);
+        height: pxr(24);
+      }
+      .price-icon{
+        position: absolute;
+        top:pxr(150);
+        width: 100%;
+      }
+      .payment{
+        &:after{
+          position: absolute;
+          content: '';
+          top: -pxr(15);
+          left: 0;
+          width: 100%;
+          @extend .bor_t_b_img;
+          opacity: .6;
+          border-width: 1px 0 0 0;
+        }
+        position: relative;
+        margin-top: pxr(120);
+        color: #f74d30;
+        font-size: pxr(24);
+        position: relative;
+        padding-left: pxr(44);
+        span{
+          position: absolute;
+          left: 0;
+          top: 50%;
+          margin-top: -pxr(15);
+          display: block;
+          width: pxr(30);
+          height: pxr(30);
+          background: #f74d30;
+          line-height: pxr(30);
+          text-align: center;
+          font-size: pxr(20);
+          color: #FFFFFF;
+        }
+      } 
+      .priceLabelWrap {
+        position: absolute;
+        bottom: pxr(10);
+        width: 100%;
+        padding-right: pxr(30);
+      }
+    }
+  }
+  
+}
